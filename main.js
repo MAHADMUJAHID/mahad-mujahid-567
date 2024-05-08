@@ -1,34 +1,31 @@
-var alienColor = "green";
-if (alienColor == "green") {
-    console.log("version 1 : print a message that the player earned 5 point");
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var inquirer_1 = require("inquirer");
+var ans = await inquirer_1.default.prompt([{
+        type: "number",
+        name: "first_number",
+        message: " entry first name"
+    },
+    {
+        type: "number",
+        name: "second_number",
+        message: " entry first name"
+    },
+    {
+        type: "list",
+        name: "oprateors",
+        message: "please select your oprators types",
+        choices: ["addition", "subtraction", "multiplication", "division"]
+    }
+]);
+if (ans.oprateors === "addition") {
+    console.log(ans.first_number + ans.second_number);
 }
-else if (alienColor == "yellow") {
-    console.log("print a message that the player earned 10 point");
+else if (ans.oprateors === "subtraction") {
+    console.log(ans.first_number - ans.second_number);
 }
-else if (alienColor == "red") {
-    console.log(" print a message that the player earned 15 points");
+else if (ans.oprateors === "multiplication") {
+    console.log(ans.first_number * ans.second_number);
 }
-//vession 2 
-var alienColor2 = "yellow";
-if (alienColor2 == "green") {
-    console.log("print a message that the player earned 5 point");
-}
-else if (alienColor2 == "yellow") {
-    console.log("Version 2 : print a message that the player earned 10 point");
-}
-else if (alienColor2 == "red") {
-    console.log(" print a message that the player earned 15 points");
-}
-//version 3 
-var alienColor3 = "red";
-if (alienColor3 == "green") {
-    console.log("print a message that the player earned 5 point");
-}
-else if (alienColor3 == "yellow") {
-    console.log("print a message that the player earned 10 point");
-}
-else if (alienColor3 == "red") {
-    console.log(" version 3 : print a message that the player earned 15 points");
-}
-// is main alien wali value ko red kr ke answer nikale ga jaise abhi green hai to green ka answer de ga 5 points 
-//or agr yellow main ho ta yellow main dega red ka red main 
+else
+    console.log(ans.first_number / ans.second_number);
